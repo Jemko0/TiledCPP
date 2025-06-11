@@ -3,29 +3,24 @@
 #include "Common.h"
 #include "raylib.h"
 
+FORWARD_DECLARE(TWorld);
+FORWARD_DECLARE(TScene);
+
 class ENGINE_API Engine
 {
+private:
+    int m_ScreenWidth = 480;
+    int m_ScreenHeight = 360;
+
 public:
-    Engine()
-    {
 
-    }
+    TScene* Scene;
 
-    ~Engine()
-    {
+    Engine() = default;
+    ~Engine() = default;
 
-    }
+    int Init();
 
-    int Init()
-    {
-        while (!WindowShouldClose())
-        {
-            EngineLoop();
-        }
-    }
-
-    int EngineLoop()
-    {
-
-    }
+private:
+    void EngineLoop();
 };

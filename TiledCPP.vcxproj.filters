@@ -31,16 +31,70 @@
     <Filter Include="Header Files\Engine\Resources">
       <UniqueIdentifier>{572e0284-0256-4622-b217-dc23226db15f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Engine\Core\Modules">
-      <UniqueIdentifier>{e84ddb56-4af7-45a3-987d-76ce848595b7}</UniqueIdentifier>
+    <Filter Include="Header Files\Engine\CoreTObject">
+      <UniqueIdentifier>{d0250ccb-a584-4aa0-90a8-06c2e59e1c09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Core\CoreTObject">
+      <UniqueIdentifier>{67592ef2-e25d-40dd-8187-753245c27327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\World">
+      <UniqueIdentifier>{8641df4b-9007-4671-b4a1-92e7b3002595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Core\World">
+      <UniqueIdentifier>{029c6cfe-2d52-44d5-b6a5-c8f09fdb5301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Core\Tilemap">
+      <UniqueIdentifier>{b3517214-d4ae-4606-9ff9-7555f6944e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Tilemap">
+      <UniqueIdentifier>{95c13a2b-dd40-4732-b384-00f3bab88113}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Tilemap\Structs">
+      <UniqueIdentifier>{2680a762-f337-44eb-bd03-ec101c1934e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Datatypes">
+      <UniqueIdentifier>{056d16b5-8231-49c2-a698-5ba07d53a7fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Rendering">
+      <UniqueIdentifier>{957b6935-5765-41c0-ac9b-df0157b56b68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Rendering\Interface">
+      <UniqueIdentifier>{a85f8e6d-3af0-4ac4-988a-b2eeeda309af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\ECS">
+      <UniqueIdentifier>{046416d6-a359-4262-9164-99ba6935603d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Module.cpp">
+    <ClCompile Include="Engine.cpp">
       <Filter>Source Files\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TObjectBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TObject.cpp">
+      <Filter>Source Files\Engine\Core\CoreTObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TScene.cpp">
+      <Filter>Source Files\Engine\Core\World</Filter>
+    </ClCompile>
+    <ClCompile Include="TTileMap.cpp">
+      <Filter>Source Files\Engine\Core\Tilemap</Filter>
+    </ClCompile>
+    <ClCompile Include="TWorld.cpp">
+      <Filter>Source Files\Engine\Core\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TSpriteRenderComponent.cpp">
+      <Filter>Source Files\Engine\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="TSpriteRendererComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,8 +110,38 @@
     <ClInclude Include="ResourceManager.h">
       <Filter>Header Files\Engine\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="Module.h">
-      <Filter>Header Files\Engine\Core\Modules</Filter>
+    <ClInclude Include="TObjectBase.h">
+      <Filter>Header Files\Engine\CoreTObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TObject.h">
+      <Filter>Header Files\Engine\CoreTObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TComponent.h">
+      <Filter>Header Files\Engine\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TScene.h">
+      <Filter>Header Files\Engine\World</Filter>
+    </ClInclude>
+    <ClInclude Include="TWorld.h">
+      <Filter>Header Files\Engine\World</Filter>
+    </ClInclude>
+    <ClInclude Include="TTileMap.h">
+      <Filter>Header Files\Engine\Tilemap</Filter>
+    </ClInclude>
+    <ClInclude Include="FTile.h">
+      <Filter>Header Files\Engine\Tilemap\Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="DataTypes.h">
+      <Filter>Header Files\Engine\Datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderableAsset.h">
+      <Filter>Header Files\Engine\Rendering\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="TSpriteRendererComponent.h">
+      <Filter>Header Files\Engine\ECS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
