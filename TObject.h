@@ -3,60 +3,33 @@
 #include "Engine.h"
 #include "TComponent.h"
 #include "TObjectBase.h"
-#include "TWorld.h"
 
 FORWARD_DECLARE(TScene);
+FORWARD_DECLARE(TWorld);
 
 class ENGINE_API TObject : TObjectBase
 {
-public:
+
+public: 
+    typedef TObject Super;
     TObject() = default;
 
-    void SetScene(TScene& scene)
-    {
-        m_ParentScene = &scene;
-    }
+    bool bPendingDestroy = false;
+
+    void SetScene(TScene& scene);
+    virtual void BeginDestroy();
+    virtual void Cleanup() = 0;
 
     template<typename T, typename... Args>
-    T* AddComponent(Args&&... args)
-    {
-        static_assert(std::is_base_of_v<TComponent, T>);
-        auto component = std::make_unique<T>(std::forward<Args>(args)...);
-        component.SetOwner(this);
-        T* ptr = component.get();
-        m_Components.push_back(std::move(component));
-        return ptr;
-    }
+    T* AddComponent(Args&&... args);
 
     template<typename T>
-    T* GetComponent() const
-    {
-        for (auto& comp : m_Components)
-        {
-            if (auto* result = dynamic_cast<T*>(comp.get()))
-            {
-                return result;
-            }
-        }
-        return nullptr;
-    }
+    T* GetComponent() const;
     
-    std::vector<std::unique_ptr<TComponent>>* GetComponents()
-    {
-        return &m_Components;
-    }
-
+    std::vector<std::unique_ptr<TComponent>>* GetComponents();
 
     template<typename T, typename... Args>
-    static T* CreateObject(Args&&... args)
-    {
-        static_assert(std::is_base_of_v<TObject, T>, "T must derive from TObject");
-        auto obj = std::make_unique<T>(std::forward<Args>(args)...);
-        T* rawPtr = obj.get();
-        TWorld::Instance().GetObjects().push_back(std::move(obj));
-
-        return rawPtr;
-    }
+    static T* CreateObject(Args&&... args);
 
     virtual void Update(float deltaTime);
 

@@ -64,6 +64,24 @@
     <Filter Include="Source Files\Engine\ECS">
       <UniqueIdentifier>{046416d6-a359-4262-9164-99ba6935603d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\AssetManager">
+      <UniqueIdentifier>{fd7b8057-8795-47c8-8d19-ee15d62355e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\AssetManager">
+      <UniqueIdentifier>{675d42a7-3b41-4589-8e6e-cf30af7a09d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Objects">
+      <UniqueIdentifier>{185aec69-9736-43d6-82c8-3d8453294055}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Objects">
+      <UniqueIdentifier>{17f6547e-1a63-4908-8615-7392b65c6fb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Objects\Entity">
+      <UniqueIdentifier>{951431b1-8d7d-4dab-ad93-8cf3c2a3032b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Tilemap\Lookup">
+      <UniqueIdentifier>{cfe1813c-59d6-424b-ab8b-09c38a9f03d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,9 +89,6 @@
     </ClCompile>
     <ClCompile Include="Engine.cpp">
       <Filter>Source Files\Engine\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="TObjectBase.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TObject.cpp">
       <Filter>Source Files\Engine\Core\CoreTObject</Filter>
@@ -93,7 +108,25 @@
     <ClCompile Include="TSpriteRenderComponent.cpp">
       <Filter>Source Files\Engine\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="TSpriteRendererComponent.cpp">
+    <ClCompile Include="TObjectBase.cpp">
+      <Filter>Source Files\Engine\Core\CoreTObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetManager.cpp">
+      <Filter>Source Files\Engine\AssetManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TPlaceable.cpp">
+      <Filter>Source Files\Engine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="TTileColliderComponent.cpp">
+      <Filter>Source Files\Engine\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="TMovementComponent.cpp">
+      <Filter>Source Files\Engine\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="TileLookup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -142,6 +175,27 @@
     </ClInclude>
     <ClInclude Include="TSpriteRendererComponent.h">
       <Filter>Header Files\Engine\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TTransformComponent.h">
+      <Filter>Header Files\Engine\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetManager.h">
+      <Filter>Header Files\Engine\AssetManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TPlaceable.h">
+      <Filter>Header Files\Engine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Engine\Objects\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="TTileColliderComponent.h">
+      <Filter>Header Files\Engine\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TMovementComponent.h">
+      <Filter>Header Files\Engine\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TileLookup.h">
+      <Filter>Header Files\Engine\Tilemap\Lookup</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

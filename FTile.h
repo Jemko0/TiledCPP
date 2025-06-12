@@ -6,10 +6,10 @@ namespace Tile
 {
 	enum ETileType
 	{
-		Air = 0,
-		Dirt,
-		Grass,
-		Stone,
+		AIR = 0,
+		DIRT,
+		GRASS,
+		STONE,
 		ETileType_MAX,
 	};
 
@@ -17,6 +17,7 @@ namespace Tile
 	{
 	public:
 		bool render = true;
-		Texture2D texture;
+		bool solid = true;
+		Texture2D* texture;
 	};
 }

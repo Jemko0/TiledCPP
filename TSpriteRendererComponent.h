@@ -9,10 +9,12 @@ class ENGINE_API TSpriteRendererComponent : TComponent
 public:
 	typedef TComponent Super;
 	Texture2D texture;
+	Color tint = WHITE;
 
-	void Update(float deltaTime) override;
 	void Initialize() override;
 
+	void SetTint(const Color& newTint);
+	void SetTexture(const Texture2D& tex);
+	bool CanRender() override;
 	void Render() override;
-	
 };

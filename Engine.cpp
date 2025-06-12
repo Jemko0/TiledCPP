@@ -3,12 +3,23 @@
 #include "TScene.h"
 #include "Input.h"
 
+Engine::Engine()
+{
+    GAssetManager = new AssetManager();
+}
+
+Engine::~Engine()
+{
+    delete GAssetManager;
+}
+
 int Engine::Init()
 {
     InitWindow(m_ScreenWidth, m_ScreenHeight, "Tiled CPP");
+    SetWindowTitle("Tiled Engine");
     SetTargetFPS(144);
 
-    Scene = TWorld::NewScene();
+    GScene = TWorld::NewScene();
 
     while (!WindowShouldClose())
     {
@@ -23,5 +34,5 @@ void Engine::EngineLoop()
 {
     Input::HandleInput();
 
-    Scene->Update(GetFrameTime());
+    GScene->Update(GetFrameTime());
 }

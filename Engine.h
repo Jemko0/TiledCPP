@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Common.h"
+#include "AssetManager.h"
 #include "raylib.h"
 
 FORWARD_DECLARE(TWorld);
@@ -14,13 +15,16 @@ private:
 
 public:
 
-    TScene* Scene;
+    TScene* GScene = nullptr;
+    AssetManager* GAssetManager = nullptr;
 
-    Engine() = default;
-    ~Engine() = default;
+    Engine();
+    ~Engine();
 
     int Init();
 
 private:
     void EngineLoop();
 };
+
+Engine GEngine;

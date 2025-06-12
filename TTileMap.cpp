@@ -16,3 +16,21 @@ void TTileMap::Initialize(int w, int h)
         tiles[x].resize(height);
     }
 }
+
+void TTileMap::Cleanup()
+{
+    tiles.clear();
+    tileFrames.clear();
+    lightMap.clear();
+    Super::Cleanup();
+}
+
+void TTileMap::BeginDestroy()
+{
+    Super::BeginDestroy();
+}
+
+bool TTileMap::IsSolidTile(int x, int y)
+{
+    return tiles[x][y];
+}
