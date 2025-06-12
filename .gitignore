@@ -30,5 +30,4 @@
 *.exe
 *.out
 *.app
-/x64/Debug/TiledCPP.tlog
 *.tlog
