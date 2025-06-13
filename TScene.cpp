@@ -1,6 +1,7 @@
 #include "TScene.h"
 #include "TObject.h"
 #include "Input.h"
+#include "Entity.h"
 
 TScene::TScene()
 {
@@ -89,7 +90,7 @@ void TScene::DestroyTileMap()
 
 void TScene::Init()
 {
-    //TObject::CreateObject<TEntity>()
+    TEntity* e = TObject::CreateObject<TEntity>();
 }
 
 void TScene::Update(float deltaTime)
@@ -114,7 +115,12 @@ void TScene::Update(float deltaTime)
 
 void TScene::Render()
 {
-    BeginDrawing();
+    ClearBackground(BLACK);
+
+    if (m_Objects.empty())
+    {
+        return;
+    }
 
     for (TObject* o : m_Objects)
     {
@@ -123,6 +129,4 @@ void TScene::Render()
             c->Render();
         }
     }
-
-    EndDrawing();
 }

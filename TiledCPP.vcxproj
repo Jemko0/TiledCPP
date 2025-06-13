@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TComponent.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="TSpriteRenderComponent.cpp" />
     <ClCompile Include="TTileColliderComponent.cpp" />
     <ClCompile Include="TTileMap.cpp" />
+    <ClCompile Include="TTransformComponent.cpp" />
     <ClCompile Include="TWorld.cpp" />
   </ItemGroup>
   <ItemGroup>

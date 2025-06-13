@@ -30,6 +30,11 @@ void TTileMap::BeginDestroy()
     Super::BeginDestroy();
 }
 
+void TTileMap::Update(float deltaTime)
+{
+    Super::Update(deltaTime);
+}
+
 bool TTileMap::IsSolidTile(int x, int y)
 {
     return tiles[x][y];

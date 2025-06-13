@@ -20,6 +20,8 @@ public:
 
     virtual void Cleanup() override;
     virtual void BeginDestroy() override;
+    virtual void Update(float deltaTime) override;
+
 
     bool IsSolidTile(int x, int y);
 };

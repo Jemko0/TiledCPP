@@ -1,6 +1,9 @@
 #include "Input.h"
 #include "raylib.h"
 
+int Input::lr = 0;
+int Input::ud = 0;
+
 void Input::HandleInput()
 {
 	PollInputEvents();

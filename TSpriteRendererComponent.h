@@ -4,17 +4,17 @@
 #include "TComponent.h"
 #include "raylib.h"
 
-class ENGINE_API TSpriteRendererComponent : TComponent
+class ENGINE_API TSpriteRendererComponent : public TComponent
 {
 public:
 	typedef TComponent Super;
 	Texture2D texture;
 	Color tint = WHITE;
 
-	void Initialize() override;
+	virtual void Initialize() override;
 
 	void SetTint(const Color& newTint);
-	void SetTexture(const Texture2D& tex);
+	void SetTexture(const Texture2D tex);
 	bool CanRender() override;
 	void Render() override;
 };

@@ -11,7 +11,7 @@ void TSpriteRendererComponent::SetTint(const Color& newTint)
 	tint = newTint;
 }
 
-void TSpriteRendererComponent::SetTexture(const Texture2D& tex)
+void TSpriteRendererComponent::SetTexture(const Texture2D tex)
 {
 	texture = tex;
 }

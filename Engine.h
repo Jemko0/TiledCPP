@@ -27,4 +27,4 @@ private:
     void EngineLoop();
 };
 
-Engine GEngine;
+extern Engine GEngine;

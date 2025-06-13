@@ -3,6 +3,8 @@
 #include "TScene.h"
 #include "Input.h"
 
+Engine GEngine;
+
 Engine::Engine()
 {
     GAssetManager = new AssetManager();
@@ -35,4 +37,8 @@ void Engine::EngineLoop()
     Input::HandleInput();
 
     GScene->Update(GetFrameTime());
+
+    BeginDrawing();
+    GScene->Render();
+    EndDrawing();
 }

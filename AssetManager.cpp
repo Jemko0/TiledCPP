@@ -119,6 +119,11 @@ void AssetManager::Clear()
 
 void AssetManager::UnloadAll()
 {
+    if (Assets.empty())
+    {
+        return;
+    }
+
     for (auto& Pair : Assets)
     {
         const FAsset& Asset = Pair.second;

@@ -10,16 +10,16 @@ class ENGINE_API TComponent : IRenderableAsset
 public:
 	typedef TComponent Super;
 
-	virtual ~TComponent() = default;
+	~TComponent() = default;
 	bool IsActive() const { return m_Active; }
 	void SetActive(const bool active) { m_Active = active; }
 	void SetOwner(TObject* newOwner) { if (newOwner != nullptr) { m_Owner = newOwner; } }
 
-	virtual void Update(float deltaTime) = 0;
-	virtual void Initialize() = 0;
+	virtual void Update(float deltaTime);
+	virtual void Initialize();
 
 	virtual bool CanRender() { return false; };
-	virtual void Render() override = 0;
+	virtual void Render() override;
 
 protected:
 	bool m_Active = true;
