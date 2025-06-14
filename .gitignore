@@ -32,3 +32,5 @@
 *.app
 *.tlog
 *.tlog
+
+x64/*
