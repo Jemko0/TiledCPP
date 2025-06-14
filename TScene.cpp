@@ -2,6 +2,7 @@
 #include "TObject.h"
 #include "Input.h"
 #include "Entity.h"
+#include "TTileMap.h"
 
 TScene::TScene()
 {
@@ -90,14 +91,11 @@ void TScene::DestroyTileMap()
 
 void TScene::Init()
 {
-    TEntity* e = TObject::CreateObject<TEntity>();
+    TObject::CreateObject<TEntity>();
 }
 
 void TScene::Update(float deltaTime)
 {
-    activeCamera->offset.x *= Input::lr * 40 * deltaTime;
-    activeCamera->offset.y *= Input::ud * 40 * deltaTime;
-
     for (auto it = m_Objects.begin(); it != m_Objects.end();)
     {
         TObject* o = *it;
@@ -110,6 +108,7 @@ void TScene::Update(float deltaTime)
         }
 
         o->Update(deltaTime);
+        it++;
     }
 }
 
@@ -126,7 +125,10 @@ void TScene::Render()
     {
         for (std::unique_ptr<TComponent>& c : *o->GetComponents())
         {
-            c->Render();
+            if (c->CanRender())
+            {
+                c->Render();
+            }
         }
     }
 }

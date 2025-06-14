@@ -2,9 +2,9 @@
 
 #include "Engine.h"
 #include "IRenderableAsset.h"
-#include "TTileMap.h"
 
 FORWARD_DECLARE(TObject);
+FORWARD_DECLARE(TTileMap);
 
 class ENGINE_API TScene : public IRenderableAsset
 {

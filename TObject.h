@@ -42,11 +42,11 @@ public:
     template<typename T>
     T* AddComponent()
     {
-        // Create unique_ptr directly
         auto newComponent = std::make_unique<T>();
-        T* rawPtr = newComponent.get(); // Get raw pointer before moving
+        T* rawPtr = newComponent.get();
 
-        newComponent->SetOwner(this);
+        static_cast<TComponent*>(newComponent.get())->Initialize();
+        static_cast<TComponent*>(newComponent.get())->SetOwner(this);
         m_Components.push_back(std::move(newComponent));
 
         return rawPtr;
@@ -59,12 +59,9 @@ public:
     {
         static_assert(std::is_base_of_v<TObject, T>, "T must derive from TObject");
         auto obj = std::make_unique<T>(std::forward<Args>(args)...);
-
-        static_cast<TObject*>(obj.get())->Initialize();
-
         T* rawPtr = obj.get();
-        TWorld::Instance().GetScene()->GetObjects().push_back(std::move(obj));
-
+        TWorld::Instance().GetScene()->GetObjects().push_back(rawPtr);
+        obj.release(); // Release ownership
         return rawPtr;
     }
 

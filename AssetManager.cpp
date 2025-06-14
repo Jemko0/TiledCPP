@@ -104,6 +104,11 @@ Model* AssetManager::LoadModel(const std::string& Name, const std::string& Filen
 
 bool AssetManager::Exists(const std::string& Name) const
 {
+    if (Assets.size() < 1)
+    {
+        return false;
+    }
+
     return Assets.find(Name) != Assets.end();
 }
 

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Engine.h"
 #include "FTile.h"
 #include "DataTypes.h"
 #include "TObject.h"
@@ -21,7 +20,6 @@ public:
     virtual void Cleanup() override;
     virtual void BeginDestroy() override;
     virtual void Update(float deltaTime) override;
-
 
     bool IsSolidTile(int x, int y);
 };

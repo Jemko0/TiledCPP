@@ -3,8 +3,8 @@
 TEntity::TEntity()
 {
 	spriteRendererComp = AddComponent<TSpriteRendererComponent>();
-	Texture2D* t = GEngine.GAssetManager->LoadTexture("debugTile", "Assets/Tiles/DebugTile.png");
-	spriteRendererComp->SetTexture(*t);
+	Texture2D t = LoadTexture("../Assets/Tiles/debugTile.png");
+	spriteRendererComp->SetTexture(t);
 }
 
 void TEntity::Cleanup()
@@ -15,4 +15,10 @@ void TEntity::Cleanup()
 
 void TEntity::ReceiveTick()
 {
+}
+
+void TEntity::Update(float deltaTime)
+{
+	transform->position.x += 1.0;
+	std::cout << transform->position.x << std::endl;
 }

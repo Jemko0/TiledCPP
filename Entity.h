@@ -13,4 +13,5 @@ public:
 	TEntity();
 	virtual void Cleanup() override;
 	virtual void ReceiveTick() override;
+	virtual void Update(float deltaTime) override;
 };

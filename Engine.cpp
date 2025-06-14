@@ -22,6 +22,7 @@ int Engine::Init()
     SetTargetFPS(144);
 
     GScene = TWorld::NewScene();
+    GScene->Init();
 
     while (!WindowShouldClose())
     {
@@ -36,9 +37,10 @@ void Engine::EngineLoop()
 {
     Input::HandleInput();
 
-    GScene->Update(GetFrameTime());
-
     BeginDrawing();
+
+    GScene->Update(GetFrameTime());
     GScene->Render();
+
     EndDrawing();
 }
