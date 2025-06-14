@@ -85,6 +85,18 @@
     <Filter Include="Source Files\Engine\Objects\Entity">
       <UniqueIdentifier>{ec7adb42-4caf-40d0-ad4e-ce321c347b83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Objects\Entity\Character">
+      <UniqueIdentifier>{5df544e6-3b88-4509-a4c8-b67d7ba92580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Objects\Entity\Character">
+      <UniqueIdentifier>{0ee1baca-6506-4527-a56e-d45f2f92784f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\ECS\MovementComponent">
+      <UniqueIdentifier>{9e4b1f4b-eab2-40b8-9020-a71d74e59354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\ECS\MovementComponent">
+      <UniqueIdentifier>{2f71708a-9d34-4ad8-a8f3-704593c41c0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -123,9 +135,6 @@
     <ClCompile Include="TTileColliderComponent.cpp">
       <Filter>Source Files\Engine\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="TMovementComponent.cpp">
-      <Filter>Source Files\Engine\ECS</Filter>
-    </ClCompile>
     <ClCompile Include="TileLookup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -135,8 +144,17 @@
     <ClCompile Include="TComponent.cpp">
       <Filter>Source Files\Engine\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
+    <ClCompile Include="TEntity.cpp">
       <Filter>Source Files\Engine\Objects\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="TCharacter.cpp">
+      <Filter>Source Files\Engine\Objects\Entity\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="TMovementComponent.cpp">
+      <Filter>Source Files\Engine\ECS\MovementComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="TCharacterMovementComponent.cpp">
+      <Filter>Source Files\Engine\ECS\MovementComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,17 +212,23 @@
     <ClInclude Include="TPlaceable.h">
       <Filter>Header Files\Engine\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
+    <ClInclude Include="TEntity.h">
       <Filter>Header Files\Engine\Objects\Entity</Filter>
     </ClInclude>
     <ClInclude Include="TTileColliderComponent.h">
       <Filter>Header Files\Engine\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="TMovementComponent.h">
-      <Filter>Header Files\Engine\ECS</Filter>
-    </ClInclude>
     <ClInclude Include="TileLookup.h">
       <Filter>Header Files\Engine\Tilemap\Lookup</Filter>
+    </ClInclude>
+    <ClInclude Include="TCharacter.h">
+      <Filter>Header Files\Engine\Objects\Entity\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="TMovementComponent.h">
+      <Filter>Header Files\Engine\ECS\MovementComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TCharacterMovementComponent.h">
+      <Filter>Header Files\Engine\ECS\MovementComponent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

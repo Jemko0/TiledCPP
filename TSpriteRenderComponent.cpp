@@ -24,5 +24,10 @@ bool TSpriteRendererComponent::CanRender()
 void TSpriteRendererComponent::Render()
 {
 	TTransformComponent* transform = m_Owner->GetComponent<TTransformComponent>();
-	DrawTextureEx(texture, transform->position, transform->angle, transform->scale, tint);
+
+	Rectangle src = { 0, 0, texture.width, texture.height };
+	Rectangle dest = {transform->position.x, transform->position.y, transform->size.x * transform->scale, transform->size.y * transform->scale };
+
+	DrawTexturePro(texture, src, dest, { 0, 0 }, transform->angle, tint);
+	//DrawTextureEx(texture, transform->position, transform->angle, transform->scale, tint);
 }

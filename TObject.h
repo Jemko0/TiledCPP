@@ -24,6 +24,7 @@ public:
     void SetScene(TScene& scene);
     virtual void BeginDestroy();
     virtual void Cleanup();
+    virtual void Initialize();
 
     template<typename T>
     T* GetComponent() const
@@ -60,6 +61,7 @@ public:
         static_assert(std::is_base_of_v<TObject, T>, "T must derive from TObject");
         auto obj = std::make_unique<T>(std::forward<Args>(args)...);
         T* rawPtr = obj.get();
+        static_cast<TObject*>(rawPtr)->Initialize();
         TWorld::Instance().GetScene()->GetObjects().push_back(rawPtr);
         obj.release(); // Release ownership
         return rawPtr;

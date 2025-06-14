@@ -22,3 +22,8 @@ bool TTransformComponent::CanRender()
 {
 	return false;
 }
+
+Vector2 TTransformComponent::GetScaledBounds()
+{
+	return {size.x * scale, size.y * scale};
+}

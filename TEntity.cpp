@@ -1,9 +1,9 @@
-#include "Entity.h"
+#include "TEntity.h"
 
 TEntity::TEntity()
 {
 	spriteRendererComp = AddComponent<TSpriteRendererComponent>();
-	Texture2D t = LoadTexture("../Assets/Tiles/debugTile.png");
+	Texture2D t = LoadTexture("../Assets/Entities/entity.png");
 	spriteRendererComp->SetTexture(t);
 }
 
@@ -19,6 +19,4 @@ void TEntity::ReceiveTick()
 
 void TEntity::Update(float deltaTime)
 {
-	transform->position.x += 1.0;
-	std::cout << transform->position.x << std::endl;
 }

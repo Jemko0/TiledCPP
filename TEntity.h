@@ -4,6 +4,9 @@
 #include "TPlaceable.h"
 #include "TSpriteRendererComponent.h"
 
+/// <summary>
+/// TEntity is a class for objects that can render in the world
+/// </summary>
 class ENGINE_API TEntity : public TPlaceable
 {
 public:

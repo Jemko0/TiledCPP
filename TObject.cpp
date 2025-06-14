@@ -17,6 +17,10 @@ void TObject::Cleanup()
 	return;
 }
 
+void TObject::Initialize()
+{
+}
+
 std::vector<std::unique_ptr<TComponent>>* TObject::GetComponents()
 {
 	return &m_Components;

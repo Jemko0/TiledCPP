@@ -17,6 +17,8 @@ Engine::~Engine()
 
 int Engine::Init()
 {
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+
     InitWindow(m_ScreenWidth, m_ScreenHeight, "Tiled CPP");
     SetWindowTitle("Tiled Engine");
     SetTargetFPS(144);
@@ -28,6 +30,8 @@ int Engine::Init()
     {
         EngineLoop();
     }
+
+    delete GScene;
 
     CloseWindow();
     return 0;

@@ -1,7 +1,7 @@
 #include "TScene.h"
 #include "TObject.h"
 #include "Input.h"
-#include "Entity.h"
+#include "TEntity.h"
 #include "TTileMap.h"
 
 TScene::TScene()
@@ -11,7 +11,10 @@ TScene::TScene()
 
 TScene::~TScene()
 {
-    delete activeCamera;
+    if (activeCamera != nullptr)
+    {
+        delete activeCamera;
+    }
 
     for (TObject*& o : m_Objects)
     {
@@ -91,7 +94,8 @@ void TScene::DestroyTileMap()
 
 void TScene::Init()
 {
-    TObject::CreateObject<TEntity>();
+    InitTileMap(100, 100);
+    //TObject::CreateObject<TEntity>();
 }
 
 void TScene::Update(float deltaTime)
@@ -114,7 +118,7 @@ void TScene::Update(float deltaTime)
 
 void TScene::Render()
 {
-    ClearBackground(BLACK);
+    ClearBackground(RED);
 
     if (m_Objects.empty())
     {
