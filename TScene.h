@@ -30,6 +30,10 @@ public:
     TTileMap* InitTileMap(int w, int h);
     TTileMap* GetTileMap();
     void DestroyTileMap();
+
+    //utility
+
+    Rectangle GetCameraFrustum();
     
     void Init();
     void Update(float deltaTime);

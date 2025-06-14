@@ -39,10 +39,12 @@ int Engine::Init()
 
 void Engine::EngineLoop()
 {
-    Input::HandleInput();
+    InputManager::Init();
+    InputManager::Update();
 
     BeginDrawing();
 
+    DrawText(FTEXT("Camera: X: %f Y: %f", GScene->activeCamera->target.x, GScene->activeCamera->target.y), 32, 32, 24, BLACK);
     GScene->Update(GetFrameTime());
     GScene->Render();
 

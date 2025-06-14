@@ -44,3 +44,15 @@ Vector2 TMovementComponent::GetBounds() const
 {
 	return m_Bounds;
 }
+
+void TMovementComponent::AddMovementInput(const Vector2 inputDir)
+{
+	m_LastInput = inputDir;
+}
+
+Vector2 TMovementComponent::ConsumeInput()
+{
+	Vector2 v = m_LastInput;
+	m_LastInput = {0, 0};
+	return v;
+}

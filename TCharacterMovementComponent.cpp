@@ -3,6 +3,8 @@
 
 void TCharacterMovementComponent::PerformMove(float deltaTime)
 {
+	Vector2 input = ConsumeInput();
+
 	if (m_CharacterOwner)
 	{
 		TTileColliderComponent* colliderComp = m_CharacterOwner->GetTileColliderComponent();
@@ -11,6 +13,9 @@ void TCharacterMovementComponent::PerformMove(float deltaTime)
 			colliderComp->Update(deltaTime);
 		}
 	}
+
+	m_Velocity.x += m_Acceleration * input.x * deltaTime;
+	m_Velocity.y += m_Acceleration * input.y * deltaTime;
 	Super::PerformMove(deltaTime);
 }
 

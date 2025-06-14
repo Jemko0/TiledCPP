@@ -48,6 +48,8 @@ public:
     void Clear();
     void UnloadAll();
 
+    std::string GetAssetPath(const char* dir);
+
     /// <summary>
     /// Load functions will automatically get the asset, if its already loaded
     /// </summary>

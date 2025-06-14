@@ -10,7 +10,7 @@ FORWARD_DECLARE(TScene);
 class ENGINE_API TObject : TObjectBase
 {
 
-private:
+protected:
     std::string m_Name;
     std::vector<std::unique_ptr<TComponent>> m_Components;
     TScene* m_ParentScene = nullptr;
@@ -31,7 +31,6 @@ public:
     {
         for (auto& component : m_Components)
         {
-            // Use .get() to access the raw pointer from unique_ptr
             if (T* comp = dynamic_cast<T*>(component.get()))
             {
                 return comp;
@@ -63,6 +62,7 @@ public:
         T* rawPtr = obj.get();
         static_cast<TObject*>(rawPtr)->Initialize();
         TWorld::Instance().GetScene()->GetObjects().push_back(rawPtr);
+        //static_cast<TObject*>(rawPtr)->SetScene(*GEngine.GScene);
         obj.release(); // Release ownership
         return rawPtr;
     }

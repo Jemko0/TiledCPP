@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Macros.h"
+
 #ifdef ENGINE_DLL
 #ifdef _WIN32
 #define ENGINE_API __declspec(dllexport)

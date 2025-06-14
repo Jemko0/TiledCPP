@@ -92,10 +92,16 @@ void TScene::DestroyTileMap()
     m_Tilemap->BeginDestroy();
 }
 
+Rectangle TScene::GetCameraFrustum()
+{
+    if (!activeCamera) return Rectangle();
+
+    return Rectangle{ activeCamera->target.x, activeCamera->target.y, (float)GetScreenWidth(), (float)GetScreenHeight() };
+}
+
 void TScene::Init()
 {
-    InitTileMap(100, 100);
-    //TObject::CreateObject<TEntity>();
+    InitTileMap(2000, 4000);
 }
 
 void TScene::Update(float deltaTime)
@@ -119,6 +125,11 @@ void TScene::Update(float deltaTime)
 void TScene::Render()
 {
     ClearBackground(RED);
+
+    if (m_Tilemap)
+    {
+        m_Tilemap->Render();
+    }
 
     if (m_Objects.empty())
     {

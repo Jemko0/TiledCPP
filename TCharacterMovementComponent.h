@@ -16,10 +16,14 @@ enum EMovementMode {
 /// </summary>
 class ENGINE_API TCharacterMovementComponent : public TMovementComponent
 {
-private:
+protected:
 	typedef TMovementComponent Super;
 	TCharacter* m_CharacterOwner;
 	EMovementMode m_MovementMode;
+
+	float m_Acceleration = 248.0f;
+	float m_MaxWalkSpeed = 600.0f;
+	float m_TerminalVelocity = 4000.0f;
 
 public:
 	virtual void PerformMove(float deltaTime) override;

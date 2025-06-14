@@ -40,12 +40,6 @@
     <Filter Include="Header Files\Engine\World">
       <UniqueIdentifier>{8641df4b-9007-4671-b4a1-92e7b3002595}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Engine\Core\World">
-      <UniqueIdentifier>{029c6cfe-2d52-44d5-b6a5-c8f09fdb5301}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Engine\Core\Tilemap">
-      <UniqueIdentifier>{b3517214-d4ae-4606-9ff9-7555f6944e24}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Engine\Tilemap">
       <UniqueIdentifier>{95c13a2b-dd40-4732-b384-00f3bab88113}</UniqueIdentifier>
     </Filter>
@@ -97,6 +91,21 @@
     <Filter Include="Source Files\Engine\ECS\MovementComponent">
       <UniqueIdentifier>{2f71708a-9d34-4ad8-a8f3-704593c41c0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Objects\Controller">
+      <UniqueIdentifier>{4f18df27-be70-48b0-b762-2b8bf4583995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Input">
+      <UniqueIdentifier>{84864b5f-bc33-4c3f-a383-d84d750acf86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Tilemap">
+      <UniqueIdentifier>{b3517214-d4ae-4606-9ff9-7555f6944e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\World">
+      <UniqueIdentifier>{029c6cfe-2d52-44d5-b6a5-c8f09fdb5301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Input">
+      <UniqueIdentifier>{a490ecf2-466b-475a-9346-126dd3395b79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -109,16 +118,13 @@
       <Filter>Source Files\Engine\Core\CoreTObject</Filter>
     </ClCompile>
     <ClCompile Include="TScene.cpp">
-      <Filter>Source Files\Engine\Core\World</Filter>
+      <Filter>Source Files\Engine\World</Filter>
     </ClCompile>
     <ClCompile Include="TTileMap.cpp">
-      <Filter>Source Files\Engine\Core\Tilemap</Filter>
+      <Filter>Source Files\Engine\Tilemap</Filter>
     </ClCompile>
     <ClCompile Include="TWorld.cpp">
-      <Filter>Source Files\Engine\Core\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Source Files\Engine\Core</Filter>
+      <Filter>Source Files\Engine\World</Filter>
     </ClCompile>
     <ClCompile Include="TSpriteRenderComponent.cpp">
       <Filter>Source Files\Engine\ECS</Filter>
@@ -155,6 +161,15 @@
     </ClCompile>
     <ClCompile Include="TCharacterMovementComponent.cpp">
       <Filter>Source Files\Engine\ECS\MovementComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Source Files\Engine\Objects\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Mappings.cpp">
+      <Filter>Source Files\Engine\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,9 +209,6 @@
     <ClInclude Include="DataTypes.h">
       <Filter>Header Files\Engine\Datatypes</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Header Files\Engine\Core</Filter>
-    </ClInclude>
     <ClInclude Include="IRenderableAsset.h">
       <Filter>Header Files\Engine\Rendering\Interface</Filter>
     </ClInclude>
@@ -229,6 +241,18 @@
     </ClInclude>
     <ClInclude Include="TCharacterMovementComponent.h">
       <Filter>Header Files\Engine\ECS\MovementComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>Header Files\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Header Files\Engine\Objects\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Mappings.h">
+      <Filter>Header Files\Engine\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

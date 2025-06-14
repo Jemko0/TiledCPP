@@ -131,7 +131,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Mappings.cpp" />
     <ClCompile Include="TCharacter.cpp" />
     <ClCompile Include="TCharacterMovementComponent.cpp" />
     <ClCompile Include="TEntity.cpp" />
@@ -153,6 +155,9 @@
   <ItemGroup>
     <ClInclude Include="API.h" />
     <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="Mappings.h" />
     <ClInclude Include="TCharacter.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="DataTypes.h" />

@@ -156,3 +156,8 @@ void AssetManager::UnloadAll()
     }
     Clear();
 }
+
+std::string AssetManager::GetAssetPath(const char* dir = nullptr)
+{
+    return std::string("../Assets/") + dir;
+}
